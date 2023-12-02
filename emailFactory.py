@@ -42,11 +42,6 @@ class emailFactory:
         self.service = build('gmail', 'v1', credentials=creds)
 
     def compose_email(self, sender_email, receiver_email, subject, body):
-        current_time = time.time()
-        if self.last_sent_email is not None:
-            time_difference = abs(current_time - self.last_sent_email)
-        if self.last_sent_email is None or time_difference > 30*60:
-            message = self.create_message(sender_email, receiver_email, subject, body)
-            self.send_message(self.service, 'me', message)
-            self.last_sent_email = time.time()
+        message = self.create_message(sender_email, receiver_email, subject, body)
+        self.send_message(self.service, 'me', message)
 

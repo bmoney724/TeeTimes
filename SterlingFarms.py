@@ -101,6 +101,7 @@ while time.time() - start_time < max_duration:
                                                "we found this time: " + time_found)
                     print(time_found)
                     winsound.Beep(frequency, duration)
+                    sleep(15*60)
             sleep(5)
             displayTimes = driver.find_element(By.ID, "btnDisplayTimes")
             displayTimes.click()
