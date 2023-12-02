@@ -12,7 +12,7 @@ from emailFactory import emailFactory
 import time
 
 # Config
-###########################################################3
+###########################################################
 
 # Set the maximum time to attempt the operation (in seconds)
 max_duration = 60*60*1  # 1 hour in this example
