@@ -41,7 +41,7 @@ class emailFactory:
         # Create a Gmail service
         self.service = build('gmail', 'v1', credentials=creds)
 
-    def compose_email(self, sender_email, receiver_email, subject, body):
+    def compose_email(self, sender_email, receiver_email, subject, body, user='me'):
         message = self.create_message(sender_email, receiver_email, subject, body)
-        self.send_message(self.service, 'me', message)
+        self.send_message(self.service, user, message)
 

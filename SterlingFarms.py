@@ -11,33 +11,38 @@ from selenium.webdriver.common.keys import Keys
 from emailFactory import emailFactory
 import time
 
+# Config
+###########################################################3
+
 # Set the maximum time to attempt the operation (in seconds)
 max_duration = 60*60*1  # 1 hour in this example
 
 # Set the interval between attempts (in seconds)
 interval = 5
 
+# this sets the sound to be made upon finding a valid tee time
+frequency = 2500  # Set Frequency To 2500 Hertz
+duration = 5000  # Set Duration To 1000 ms == 1 second
+
+from_address = "bmolloy724@gmail.com"
+to_address = "bmolloy724@gmail.com"
+emailService = emailFactory()
+
+# this will be the time that it will stop looking for times at (ex: "04:00 pm")
+unAcceptableTime = "01:00 pm"
+# number of golfers
+golfers = 4
+
+# day of the month (ex. "july")
+month = "december"
+day = "2"
+
+###########################################################
+
 start_time = time.time()
 
 while time.time() - start_time < max_duration:
     try:
-        # Code that might raise an exception
-        # this sets the sound to be made upon finding a valid tee time
-        frequency = 2500  # Set Frequency To 2500 Hertz
-        duration = 5000  # Set Duration To 1000 ms == 1 second
-
-        from_address = "bmolloy724@gmail.com"
-        to_address = "bmolloy724@gmail.com"
-        emailService = emailFactory()
-
-        # this will be the time that it will stop looking for times at (ex: "04:00 pm")
-        unAcceptableTime = "01:00 pm"
-        # number of golfers
-        golfers = 4
-
-        # day of the month (ex. "july")
-        month = "december"
-        day = "2"
 
         # Using Chrome (can be whatever browser)
         service = Service()
